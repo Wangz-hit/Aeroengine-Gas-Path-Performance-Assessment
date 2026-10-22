@@ -1,0 +1,33 @@
+seed: 17
+data_seed: 731
+engines: 1
+cpu_threads: 2
+simulation:
+  n_samples: 180
+  noise_std: 0.012
+  outlier_fraction: 0.018
+  maintenance: [0.53, 0.81]
+  individual_variation: 0.25
+preprocessing:
+  mode: offline
+  window: 15
+  ensembles: 4
+  denoise: true
+split:
+  train: 0.60
+  valid: 0.15
+model:
+  sequence_length: 12
+  conv_channels: [16, 16]
+  lstm_hidden: 24
+  mlp_hidden: 32
+  dropout: 0.02
+training:
+  epochs: 40
+  batch_size: 128
+  learning_rate: 0.002
+  patience: 10
+  log_every: 10
+evaluation:
+  ridge: 0.001
+  event_width: 3

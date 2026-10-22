@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aero-gas-path-assessment"
+version = "1.0.0"
+description = "Fingerprint-guided aeroengine performance assessment research implementation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26,<3", "pandas>=2.0,<3", "scipy>=1.11,<2",
+    "matplotlib>=3.8,<4", "PyYAML>=6.0,<7", "torch>=2.2,<3"
+]
+
+[project.scripts]
+aero-gas-path-demo = "aero_gas_path.demo:main"
+
+[tool.setuptools.packages.find]
+include = ["aero_gas_path*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
